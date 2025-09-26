@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "Extrator NFCe Nota Parana",
+  "version": "1.1",
+  "description": "Extensão para extração dos dados da Nota Paraná",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fabianofnl@gmail.com"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Extrator da NFCe Nota Paraná",
+    "default_icon": {
+      "16": "icons/icons8-16.png",
+      "24": "icons/icons8-24.png",
+      "32": "icons/icons8-32.png",
+      "48": "icons/icons8-48.png",
+      "64": "icons/icons8-64.png",
+      "96": "icons/icons8-96.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icons8-16.png",
+    "24": "icons/icons8-24.png",
+    "32": "icons/icons8-32.png",
+    "48": "icons/icons8-48.png",
+    "64": "icons/icons8-64.png",
+    "96": "icons/icons8-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "icons/*.png"
+  ]
+}

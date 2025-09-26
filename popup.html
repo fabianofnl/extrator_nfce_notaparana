@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 360px;
+            min-height: 200px;
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 64px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .settings-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            margin-top: 15px;
+            font-size: 11px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="icons/icons8-64.png" alt="diarias">
+        </div>
+        <h1>Extrator NFCe Nota Paraná</h1>
+        
+        <div class="info">
+            <p><strong>Abrir:</strong> <span id="currentUrl">Carregando...</span></p>
+            <p><strong>Visitas hoje:</strong> <span id="visitCount">0</span></p>
+        </div>
+
+        <div class="buttons">
+            <button id="actionBtn">📂 Abrir Extrator</button>
+            <button id="settingsBtn" class="settings-btn">⚙️ Configurações</button>
+        </div>
+
+        <div class="status" id="status">
+            Extensão carregada com sucesso!
+        </div>
+
+        <div class="footer">
+            Extrator da NFCe Nota Paraná extensão Firefox 🦊
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
