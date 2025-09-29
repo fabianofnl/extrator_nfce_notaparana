@@ -385,6 +385,25 @@
         console.log('NFCe Extractor popup mostrado!');
     }
 
+    function openSettingsPage() {
+        try {
+            // Método mais confiável: enviar mensagem ao background
+            browser.runtime.sendMessage({
+                action: 'openOptionsPage'
+            });
+        } catch (error) {
+            console.error('Erro ao abrir página de configurações:', error);
+            
+            // Fallback: abre em nova aba
+            try {
+                const optionsUrl = browser.runtime.getURL('options.html');
+                window.open(optionsUrl, '_blank');
+            } catch (e) {
+                console.error('Falha no fallback:', e);
+            }
+        }
+    }
+
     // Remove popup NFCe Extractor
     function removeNfceExtractor() {
         if (nfceExtractorElement) {
@@ -400,7 +419,16 @@
 
     // Abre as configurações
     function openConfiguration() {
-        window.open(browser.runtime.getURL('options.html'));
+        browser.runtime.sendMessage({
+            action: 'openOptionsPage'
+        }).then(() => {
+            console.log('Página de configurações solicitada');
+            removeHelloWorld();
+        }).catch(error => {
+            console.error('Erro ao abrir configurações:', error);
+            // Fallback: tenta abrir diretamente
+            openSettingsPage();
+        });
     }
 
     // Incrementa contador de ações executadas
