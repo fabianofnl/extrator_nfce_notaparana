@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Extrator NFCe Nota Parana",
-  "version": "1.1",
+  "version": "1.0",
   "description": "Extensão para extração dos dados da Nota Paraná",
   "permissions": [
     "activeTab",
