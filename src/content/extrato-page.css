@@ -1,0 +1,32 @@
+/* Elementos injetados na tabela da própria página (fora do Shadow DOM). */
+#notasId .nfx-cell {
+  width: 32px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#notasId .nfx-check {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #1d6fd6;
+}
+
+#notasId tr.nfx-selected > td {
+  background: #e8f1fd !important;
+}
+
+#notasId .nfx-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font: 600 11px/18px system-ui, sans-serif;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#notasId .nfx-badge--mercado { background: #e3f4ea; color: #1c6b3c; }
+#notasId .nfx-badge--meal { background: #fdf0dc; color: #8a5a10; }
+#notasId .nfx-badge--unknown { background: #eef0f3; color: #5b6573; }

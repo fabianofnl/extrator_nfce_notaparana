@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configurações · Extrator NFCe</title>
+  <link rel="stylesheet" href="../ui.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <img src="../../icons/icons8-48.png" alt="" width="40" height="40">
+      <div>
+        <h1>Configurações</h1>
+        <p class="muted">Extrator NFCe Nota Paraná</p>
+      </div>
+    </header>
+
+    <form id="form" class="stack">
+      <section class="card">
+        <h2>Endereços</h2>
+        <p class="muted">
+          A extensão só atua nestas páginas (incluindo o que vier depois do caminho). Ao salvar um domínio novo,
+          o Firefox pede permissão para acessá-lo.
+        </p>
+        <label class="field">
+          <span>Nota Paraná – página “Minhas notas”</span>
+          <input type="url" id="notaParanaUrl" required placeholder="https://notaparana.pr.gov.br/nfprweb/Extrato">
+        </label>
+        <label class="field">
+          <span>Sistema interno – endereço do sistema de diárias</span>
+          <input type="url" id="systemUrl" placeholder="https://sistema.empresa.com/app/">
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Estabelecimentos</h2>
+        <p class="muted">
+          Um por linha, no formato <code>CNPJ=Tipo</code>. Tipos: <strong>Mercado</strong> ou <strong>Meal</strong>.
+          Linhas iniciadas com <code>#</code> são comentários. Também dá para cadastrar direto pelo painel de diárias.
+        </p>
+        <textarea id="storeDocuments" rows="8" spellcheck="false"
+          placeholder="# Condor Uberaba&#10;76.189.406/0026-84=Mercado"></textarea>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Itens não alimentícios</h2>
+          <button type="button" id="restoreKeywords" class="btn">Restaurar padrão</button>
+        </div>
+        <p class="muted">
+          Itens cuja descrição tem uma palavra começando com estes termos já vêm desmarcados.
+          Um termo por linha; <code>#</code> para comentários.
+        </p>
+        <textarea id="nonFoodKeywords" rows="12" spellcheck="false"></textarea>
+        <div class="inline">
+          <span id="overridesInfo" class="muted"></span>
+          <button type="button" id="clearOverrides" class="btn">Esquecer ajustes manuais</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Valor</h2>
+        <label class="check">
+          <input type="checkbox" id="noCents">
+          <span>Retirar os centavos por padrão (trunca: 87,99 → 87)</span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Sistema interno</h2>
+        <p class="muted">Prioridade usada ao preencher o formulário de Reembolso de Diária.</p>
+        <select id="systemPriority">
+          <option value="">Não preencher</option>
+          <option>Mínima</option>
+          <option>Baixa</option>
+          <option>Média</option>
+          <option>Alta</option>
+          <option>Urgente</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>Backup</h2>
+        <p class="muted">
+          Remover a extensão apaga as configurações. Exporte para um arquivo e importe depois de instalar de novo.
+          A fila de diárias não entra no backup.
+        </p>
+        <div class="inline">
+          <button type="button" id="exportBtn" class="btn">Exportar configurações</button>
+          <button type="button" id="importBtn" class="btn">Importar configurações</button>
+          <input type="file" id="importFile" accept="application/json,.json" hidden>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <span id="status" class="status" hidden></span>
+        <button type="submit" class="btn btn--primary">Salvar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="../shared/money.js"></script>
+  <script src="../shared/nfce.js"></script>
+  <script src="../shared/settings.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
