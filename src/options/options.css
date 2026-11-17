@@ -1,0 +1,63 @@
+.page { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+
+.page-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.page-header h1 { font-size: 24px; }
+.page-header p { margin: 2px 0 0; }
+
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.card h2 { font-size: 16px; margin-bottom: 4px; }
+.card p { margin: 0 0 12px; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 4px; }
+
+code {
+  font: 12.5px ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--surface);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 100%;
+  font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; font-weight: 600; font-size: 13px; }
+.field input {
+  font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 400;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+select {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.inline { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; }
+.check { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.check input { width: 16px; height: 16px; margin: 0; accent-color: var(--primary); }
+
+.form-actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  background: var(--surface);
+}

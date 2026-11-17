@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Extrator NFCe</title>
+  <link rel="stylesheet" href="../ui.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <img src="../../icons/icons8-32.png" alt="" width="24" height="24">
+    <div>
+      <h1>Extrator NFCe</h1>
+      <p class="muted">Diárias a partir do Nota Paraná</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <section>
+      <div class="section-head">
+        <h2>Fila de diárias</h2>
+        <span id="queueTotal" class="muted"></span>
+      </div>
+      <ul id="queue" class="queue"></ul>
+      <p id="emptyQueue" class="empty muted">
+        Nenhuma diária na fila. Abra “Minhas notas”, selecione as notas e clique em “Preparar diárias”.
+      </p>
+    </section>
+  </main>
+
+  <footer class="actions">
+    <button id="openExtrato" class="btn btn--primary">Abrir Minhas notas</button>
+    <button id="openOptions" class="btn">Configurações</button>
+    <button id="clearQueue" class="btn btn--danger" hidden>Limpar fila</button>
+  </footer>
+
+  <script src="../shared/money.js"></script>
+  <script src="../shared/nfce.js"></script>
+  <script src="../shared/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
